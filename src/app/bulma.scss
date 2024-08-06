@@ -1,0 +1,15 @@
+@import "bulma/bulma.scss";
+
+.brand-accent-color {
+    color: #f1c40f;
+}
+
+.brand-accent-background {
+    color: #1c1c1c;
+    background-color: #f1c40f;
+}
+
+.brand-title {
+    @extend .title;
+    font-size: 4rem;
+}

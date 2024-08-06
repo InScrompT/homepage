@@ -1,95 +1,71 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import clsx from 'clsx'
+import { Zilla_Slab } from 'next/font/google'
+import { FaPhone, FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import Footer from '../components/footer'
+import Navbar from '@/components/navbar'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const zillaSlab = Zilla_Slab({
+    subsets: ['latin'],
+    weight: ['700'],
+})
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+const Home = () => {
+    return (
+        <>
+            <section className="hero is-fullheight">
+                <div className="hero-head">
+                    <Navbar />
+                </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+                <div className="hero-body">
+                    <div>
+                        <h1 className={clsx('brand-title', 'has-text-weight-bold', 'is-italic', zillaSlab.className)}>
+                            InScrompT
+                            <span className="brand-accent-color">.</span>
+                        </h1>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+                        <h2 className="subtitle mt-2">Building products for humans</h2>
+                    </div>
+                </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+                <div className="hero-foot">
+                    <div className="mb-4 ml-4 is-flex is-justify-content-left">
+                        <div className="buttons">
+                            <a href="mailto:hey@inscrompt.com" className="button">
+                                <span className="icon is-small">
+                                    <FaEnvelope />
+                                </span>
+                                <span className='is-hidden-touch'>hey@inscrompt.com</span>
+                            </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+                            <a href="https://www.linkedin.com/company/inscrompt/" className="button">
+                                <span className="icon is-small">
+                                    <FaLinkedin />
+                                </span>
+                                <span className='is-hidden-touch'>inscrompt</span>
+                            </a>
+
+                            <a href="https://www.instagram.com/inscrompt/" className="button">
+                                <span className="icon is-small">
+                                    <FaInstagram />
+                                </span>
+                                <span className='is-hidden-touch'>@inscrompt</span>
+                            </a>
+
+                            <a href="tel:+919080508847" className="button">
+                                <span className="icon is-small">
+                                    <FaPhone />
+                                </span>
+                                <span className='is-hidden-touch'>+91 90805 08847</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
+        </>
+    )
 }
+
+export default Home
