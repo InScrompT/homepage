@@ -38,6 +38,9 @@ const Footer = () => {
                     <li className={clsx({ 'is-active': pathname === '/cancellation-and-refunds' })}>
                         <Link href="/cancellation-and-refunds">Cancellation and Refunds</Link>
                     </li>
+                    <li className={clsx({ 'is-active': pathname === '/contact-us' })}>
+                        <Link href="/contact-us">Contact Us</Link>
+                    </li>
                 </ul>
             </nav>
         </footer>

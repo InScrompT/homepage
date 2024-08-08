@@ -63,6 +63,86 @@ const Home = () => {
                 </div>
             </section>
 
+            <section className="section">
+                <div className="container">
+                    <h2 className={clsx(zillaSlab.className, 'title')}>Services we provide</h2>
+                    <p className="subtitle mt-2">We meticulously craft products that align with your vision</p>
+
+                    <hr />
+
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="media">
+                                <div className="media-content">
+                                    <div className="content">
+                                        <h4 className={clsx(zillaSlab.className)}>Product Development Consultation</h4>
+                                        <p className='has-text-justified'>
+                                            At InScrompT, we work closely with clients who have an in-house tech team or
+                                            hire a dedicated tech team. We collaborate with these teams to help launch innovative products.
+                                            We provide guidance, best practices, and strategic input to ensure the successful development
+                                            and deployment of our clients' products.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mt-5">
+                        <div className="card-content">
+                            <div className="media">
+                                <div className="media-content">
+                                    <div className="content">
+                                        <h4 className={clsx(zillaSlab.className)}>Turn-Key Product Development</h4>
+                                        <p className='has-text-justified'>
+                                            In some cases, clients entrust us with the complete product development process.
+                                            We take on the project, handle all the technical work, and deliver the final product
+                                            back to the client. This allows our clients to focus on their core business while we handle
+                                            the end-to-end product development lifecycle.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mt-5">
+                        <div className="card-content">
+                            <div className="media">
+                                <div className="media-content">
+                                    <div className="content">
+                                        <h4 className={clsx(zillaSlab.className)}>Ongoing Support and Maintenance</h4>
+                                        <p className='has-text-justified'>
+                                            Even after the initial product launch, InScrompT provides ongoing support and maintenance services.
+                                            We work with clients to ensure their products remain up-to-date, secure, and continuously improved
+                                            based on user feedback and market changes.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mt-5">
+                        <div className="card-content">
+                            <div className="media">
+                                <div className="media-content">
+                                    <div className="content">
+                                        <h4 className={clsx(zillaSlab.className)}>Custom Solutions</h4>
+                                        <p className='has-text-justified'>
+                                            Every client's needs are unique, and we understand that. InScrompT offers customized
+                                            solutions tailored to the specific requirements of each project. We work closely with
+                                            our clients to understand their challenges and deliver bespoke products or services
+                                            that address their unique business needs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <Footer />
         </>
     )
