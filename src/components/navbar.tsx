@@ -15,14 +15,11 @@ const Navbar = () => {
                             Home
                         </Link>
                     )}
-                    <a href="#" className="navbar-item">
+                    <a href="https://blog.alphaman.me/" className="navbar-item">
                         Blog
                     </a>
-                    <a href="#" className="navbar-item">
-                        Portfolio
-                    </a>
                     <span className="navbar-item">
-                        <a className="button brand-accent-background">
+                        <a href="mailto:hey@inscrompt.com?subject=Hire%20Us" className="button brand-accent-background">
                             Hire Us
                         </a>
                     </span>
