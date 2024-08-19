@@ -1,0 +1,22 @@
+name: Deploy Inscrompt landing page
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_INSCROMPT_PRIVATE }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - name: Deploy to server
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@$secrets.FIDDLE_IP "cd ~/htdocs/inscrompt.com && git pull && pnpm install && pnpm build"
