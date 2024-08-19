@@ -17,4 +17,6 @@ jobs:
           key: ${{ secrets.SSH_INSCROMPT_PRIVATE }}
           script: |
             source ~/.bashrc
+            echo $PATH
+            which pnpm
             cd ~/htdocs/inscrompt.com && git pull && pnpm build
