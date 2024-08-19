@@ -17,4 +17,4 @@ jobs:
           key: ${{ secrets.SSH_INSCROMPT_PRIVATE }}
           script: |
             export PATH=$HOME/.local/share/pnpm:$PATH
-            cd ~/htdocs/inscrompt.com && git pull && pnpm install && pnpm build
+            cd ~/htdocs/inscrompt.com && git pull && cat lol.txt
