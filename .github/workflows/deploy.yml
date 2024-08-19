@@ -17,4 +17,4 @@ jobs:
           key: ${{ secrets.SSH_INSCROMPT_PRIVATE }}
           script: |
             export PATH=$HOME/.nvm/versions/node/v22.6.0/bin:$PATH
-            cd ~/htdocs/inscrompt.com && git pull && pnpm build
+            cd ~/htdocs/inscrompt.com && git pull && pnpm build && pm2 restart inscrompt
