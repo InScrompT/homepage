@@ -9,14 +9,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_INSCROMPT_PRIVATE }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       - name: Deploy to server
-        run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no inscrompt@${{ secrets.FIDDLE_IP }} "cd ~/htdocs/inscrompt.com && git pull && pnpm install && pnpm build"
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.FIDDLE_IP }}
+          username: inscrompt
+          key: ${{ secrets.SSH_INSCROMPT_PRIVATE }}
+          passphrase: ${{ secrets.SSH_INSCROMPT_PASSPHRASE }}
+          script: |
+            cd ~/htdocs/inscrompt.com && git pull && pnpm install && pnpm build
