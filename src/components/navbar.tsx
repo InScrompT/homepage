@@ -19,9 +19,9 @@ const Navbar = () => {
                         Blog
                     </a>
                     <span className="navbar-item">
-                        <a href="mailto:hey@inscrompt.com?subject=Hire%20Us" className="button brand-accent-background">
+                        <Link href="/hire-us" className="button brand-accent-background">
                             Hire Us
-                        </a>
+                        </Link>
                     </span>
                 </div>
             </div>
